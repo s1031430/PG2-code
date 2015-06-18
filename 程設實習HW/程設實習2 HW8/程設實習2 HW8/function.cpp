@@ -12,10 +12,16 @@ void NoTrouble::determination(int size)
 			{
 				cout << "Trouble object caught : There's no problem\n";
 			}
+			else
+			{
+				throw size;
+			}
+				
 		}
-		catch (int size)
+		catch (int num)
 		{
-			cout << "Trouble object caught\n";
+			Trouble T1;
+			T1.determination(num);
 		}
 }
 
@@ -27,10 +33,13 @@ void Trouble::determination(int size)
 			{
 				cout << "Trouble object caught : There's a problem\n";
 			}
+			else
+				throw size;
 		}
-		catch (int size)
+		catch (int num)
 		{
-			cout << "Trouble object caught\n";
+			BigTrouble B1;
+			B1.determination(num);
 		}
 }
 
@@ -42,8 +51,10 @@ void BigTrouble::determination(int size)
 		{
 			cout << "Trouble object caught : There's a big problem\n";
 		}
+		else
+			throw "Over Loading";
 	}
-	catch (int size)
+	catch (const char *c)
 	{
 		cout << "Trouble object caught\n";
 	}

@@ -18,6 +18,7 @@ public:
 class BigTrouble :public Trouble     //(size is not a number)
 {
 public:
+	BigTrouble(){}
 	void determination(int);
 };
 
